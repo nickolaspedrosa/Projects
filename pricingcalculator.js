@@ -74,20 +74,23 @@ document.getElementById("calculate").addEventListener("click", function () {
               vMF = tNC * prices[5];
             }
             
-        const crs= [];
-        for (let i = 13; i <= 17; i++) {
-                crs.push(parseFloat(m[i].replace("%", "")) / 100);
-            }
-        
         let cr = 0;
-        const thresholds = [100000, 500000, 1000000, 1750000, 2500000];
-        for (let i = 0; i < thresholds.length; i++) {
-            if (mV <= thresholds[i]) {
-                cr = crs[i];
-                break;
-            }
-        }
-                        const tCB = mV * cr;
+
+                    if (mV < 100000) {
+                        cr = 0;
+                    } else if (mV > 2500000) {
+                        cr = parseFloat(crs[crs.length - 1]); // Using the last cashback rate in the array
+                    } else {
+                        const thresholds = [100000, 500000, 1000000, 1750000, 2500000];
+                        for (let i = 0; i < thresholds.length; i++) {
+                            if (mV <= thresholds[i]) {
+                                cr = parseFloat(crs[i]);
+                                break;
+                            }
+                        }
+                    }
+                    
+                    const tCB = mV * cr;
                         
         function cBM(tNC) {
         if (tNC <= 10000) {
