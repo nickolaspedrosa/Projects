@@ -74,7 +74,6 @@ document.getElementById("calculate").addEventListener("click", function () {
               vMF = tNC * prices[5];
             }
             
-        let cr = 0;
 
                     if (mV < 100000) {
                         cr = 0;
