@@ -116,12 +116,12 @@ document.getElementById("calculate").addEventListener("click", function () {
         
         const TMF = vMF+BM
         const feeData = [
-            { label: "Setup fee as Main Profile", amount: pr1 },
-            { label: "Setup fee as Addon Profile", amount: pr2 },
-            { label: "Variable maintenance fee", amount: vMF },
-            { label: "Base maintenance fee", amount: BM },
-            { label: "Total maintenance fee", amount: TMF },
-            { label: "Applicable Cashback rate", amount: `${(cr * 100).toFixed(2)}%` },
+            { label: "Setup Fee as Main Profile", amount: pr1 },
+            { label: "Setup Fee as Addon Profile", amount: pr2 },
+            { label: "Monthly Card Fee", amount: vMF },
+            { label: "Base Maintenance Fee", amount: BM },
+            { label: "Total Maintenance Fee", amount: TMF },
+            { label: "Applicable Cashback Rate", amount: `${(cr * 100).toFixed(2)}%` },
             { label: "Cashback", amount: `${tCB.toLocaleString("en-US", { style: "currency", currency: "USD" })}` }
         ];
 
