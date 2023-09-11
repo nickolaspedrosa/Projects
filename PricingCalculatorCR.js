@@ -55,7 +55,7 @@ document.getElementById("calculate").addEventListener("click", function () {
         const pr2 = parseFloat(m[6].replace("$", "").replace(",", ""));
         
         const prices = [];
-        for (let i = 7; i <= 11; i++) {
+        for (let i = 7; i <= 12; i++) {
             prices.push(parseFloat(m[i].replace("$", "").replace(" ", "")));
         }
 
